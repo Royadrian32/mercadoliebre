@@ -1,11 +1,10 @@
 const express = require('express');
-const { get } = require('http');
 const path = require('path')
 const app = express();
 const port = 3030;
 
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname,'public')));
 
 
 app.get('/',(req,res)=>{
@@ -13,4 +12,5 @@ app.get('/',(req,res)=>{
    });
 
 
+   
    app.listen(port,() => (console.log(`server running on por http://localhost:${port}`)))
